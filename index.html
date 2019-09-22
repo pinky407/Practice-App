@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>calculation</title>
+<meta charset="utf-8">
+<meta name="viewport" content="wiform action="/action_page.php">
+
+</head>
+<body>
+
+    <center>
+      <h1> Maitre D</h1>
+      <table>
+        <tr>
+          <th>
+            <label>Total: $</label>
+            <input name="price" type="text" id="price" size="10" placeholder="0.00">
+          </th>
+        </tr>
+        
+        <tr style="height: 1em"></tr>
+        <tr>
+          <td>
+            <label>Tip: </label>
+            <span id="Tip">$0.00</span>
+          </td>
+          <td>
+            <label>Rate: $</label>
+            <input name="rate" type="text" id="rate" size="10" placeholder="0.00">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Tax: </label>
+            <span id="tax">$0.00</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Grand Total: </label>
+            <span id="Gtotal">$0.00</span>
+          </td>
+        </tr>
+        <tr>
+            <tr style="height: 1em"></tr>
+          
+          <td>
+              <div style="text-align: center;">
+                  <button id="button" >Calculate</button>
+              </div>
+          </td>
+       
+      </tr>
+      </table>
+    </center>
+</body>
+
+   <script
+    
+    >function subTotal() {
+         const total = Number(document.getElementById('price').value);
+         const rate = Number(document.getElementById('rate').value);
+ 
+         const tip = total*rate/100;
+         const tip1 = (tip).toFixed(2);
+         document.getElementById('Tip').innerHTML = tip1;
+         const tax =  total*5.5/100;
+         const tax1 = (tax).toFixed(2)
+         document.getElementById('tax').innerHTML = tax1;
+         const gtotal = (total+tip+tax);
+         document.getElementById('Gtotal').innerHTML = gtotal.toFixed(2);
+        
+         
+      }
+      
+      document.getElementById('button').addEventListener('click', subTotal);
+      
+   </script>
