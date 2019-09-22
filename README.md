@@ -1,3 +1,3 @@
 # Practice-App
 
--[Hosted Page](index.html)
+-[Hosted Page](https://pinky407.github.io/Practice-App/)
